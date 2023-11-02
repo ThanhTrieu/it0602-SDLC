@@ -1,5 +1,12 @@
 
-<?php session_start(); ?>
+<?php 
+session_start();
+require "loginMiddleware.php";
+if(!checkUserLogined()){
+    header("Location:login.php");
+    exit();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
